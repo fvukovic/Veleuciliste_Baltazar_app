@@ -31,43 +31,57 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
+    .state('bapp', {
+    url: '/bapp',
+    abstract: true,
+    templateUrl: 'templates/menu2.html',
+    controller: 'AppCtrl'
+  })
 
-  .state('app.search', {
-    url: '/search',
+
+  .state('app.home', {
+    url: '/home',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/home.html'
       }
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
+  .state('bapp.home', {
+    url: '/student',
     views: {
       'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'templates/homeStudent.html'
       }
     }
-  });
+  })
+   .state('bapp.profil', {
+    url: '/profil',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/profil.html'
+      }
+    }
+  })
+    .state('bapp.edit', {
+    url: '/edit',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/editProfil.html'
+      }
+    }
+  })
+   .state('bapp.login', {
+    url: '/login',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/login.html'
+      }
+    }
+  })
+
+  
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/home');
 });

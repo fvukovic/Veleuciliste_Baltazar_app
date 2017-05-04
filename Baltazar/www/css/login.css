@@ -1,0 +1,25 @@
+.login-naslov{ 
+
+}
+.content-login{
+    margin-top: 50px;
+}
+.select-godina{
+    height: 30px;
+    text-align: center;
+   
+}
+.div-godina{ 
+    width: 200px;
+}
+.login-label{
+    font-size: 22px;
+    color: white; 
+}
+.login-ulaz{
+  font-size: 20px;
+  color: white;
+  position: absolute;  
+  left: 210px;
+  width: 60px;
+}

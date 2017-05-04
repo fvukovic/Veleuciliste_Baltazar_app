@@ -1,0 +1,31 @@
+.logo-home{
+    height: 200px;
+    
+  display: block;
+    margin: 0px auto;
+    margin-top: 50px;
+    width: 210px;
+
+}
+.naslov{
+    color: white;
+}
+.logo-bijeli{
+    width: 255px;
+    display: block;
+    margin: 0px auto;
+}
+.vijest-naslov{
+    color: white;
+}
+.vijest-body{
+    line-height: 0.9;
+    color:white;
+}
+
+.bar-header {
+    border: 0px !important;
+    border-bottom-color: transparent !important;
+    background-image: none !important;
+    border-bottom: none !important;
+}
