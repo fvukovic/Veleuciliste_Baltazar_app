@@ -37,6 +37,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     templateUrl: 'templates/menu2.html',
     controller: 'AppCtrl'
   })
+     .state('bappBijeli', {
+    url: '/bapp',
+    abstract: true,
+    templateUrl: 'templates/menuBijeli.html',
+    controller: 'AppCtrl'
+  })
 
 
   .state('app.home', {
@@ -47,12 +53,20 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
-
-  .state('bapp.home', {
+    .state('bapp.home', {
     url: '/student',
     views: {
       'menuContent': {
-        templateUrl: 'templates/homeStudent.html'
+        templateUrl: 'templates/home.html'
+      }
+    }
+  })
+
+  .state('bappBijeli.detalji', {
+    url: '/detalji',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/detalji.html'
       }
     }
   })

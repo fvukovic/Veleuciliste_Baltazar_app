@@ -12,3 +12,15 @@
      padding-left: 30px;
        padding-right: 30px;
 }
+
+.mynavbar-bijeli{
+  height: 160px !important;
+  background-color: white; 
+    background-size: 100% 0px; 
+} 
+
+.logoB{ 
+    display: block; 
+    margin-right: -10px;
+  width: 290px;
+}
