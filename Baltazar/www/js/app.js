@@ -4,10 +4,9 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap'])
-.run(function($ionicPlatform,$http) {
-  $ionicPlatform.ready(function() {
-    window.FirebasePlugin.grantPermission();
+angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap' ])
+.run(function($ionicPlatform ) {
+  $ionicPlatform.ready(function() { 
     console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -15,21 +14,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap'])
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
 
-    } 
-    window.FirebasePlugin.setBadgeNumber(3);
-     window.FirebasePlugin.getToken(function(token) {
-    // save this server-side and use it to push notifications to this device
-    console.log(token);
-}, function(error) {
-    console.error(error);
-});
-window.FirebasePlugin.onNotificationOpen(function(notification) {
-    console.log(notification[0]);
-    alert("Stigla je notifikacija");
-}, function(error) {
-    console.error(error);
-});
-  
+    }  
+       
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
@@ -40,7 +26,7 @@ window.FirebasePlugin.onNotificationOpen(function(notification) {
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+      .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
@@ -55,7 +41,13 @@ window.FirebasePlugin.onNotificationOpen(function(notification) {
      .state('bappBijeli', {
     url: '/bapp',
     abstract: true,
-    templateUrl: 'templates/menuBijeli.html',
+    templateUrl: 'templates/bappBijeli.html',
+    controller: 'AppCtrl'
+  })
+    .state('appBijeli', {
+    url: '/bapp',
+    abstract: true,
+    templateUrl: 'templates/appBijeli.html',
     controller: 'AppCtrl'
   })
 
@@ -65,34 +57,43 @@ window.FirebasePlugin.onNotificationOpen(function(notification) {
     views: {
       'menuContent': {
         templateUrl: 'templates/home.html',
-        controller: 'HomeCtrl'
+          controller:'HomeCtrl'
       }
     }
   })
-   .state('app.kontakt', {
-    url: '/kontakt',
+  .state('app.map', {
+    url: '/map',
     views: {
       'menuContent': {
-        templateUrl: 'templates/kontakt.html',
-        controller: 'KontaktCtrl'
+        templateUrl: 'templates/map.html',
+          controller:'MapCtrl'
       }
     }
   })
-     .state('app.meet', {
+    .state('bapp.map', {
+    url: '/map2',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/map.html',
+          controller:'MapCtrl'
+      }
+    }
+  })
+   .state('bapp.meet', {
     url: '/meet',
     views: {
       'menuContent': {
         templateUrl: 'templates/meetUs.html',
-        controller: 'MeetUsCtrl'
+          controller:'MeetUsCtrl'
       }
     }
   })
-    .state('app.about', {
-    url: '/about',
+     .state('app.meet', {
+    url: '/meet2',
     views: {
       'menuContent': {
-        templateUrl: 'templates/aboutUs.html',
-        controller: 'AboutCtrl'
+        templateUrl: 'templates/meetUs.html',
+          controller:'MeetUsCtrl'
       }
     }
   })
@@ -101,27 +102,66 @@ window.FirebasePlugin.onNotificationOpen(function(notification) {
     views: {
       'menuContent': {
         templateUrl: 'templates/home.html',
-         controller: 'HomeCtrl'
+        controller:'HomeCtrl'
       }
     }
-  })
+  }) 
+
+
 
   .state('bappBijeli.detalji', {
-      cache:false,
     url: '/detalji/:vijestId',
     views: {
       'menuContent': {
         templateUrl: 'templates/detalji.html',
-        controller: 'NewsDetailCtrl'
+        controller:'NewsDetailCtrl'
       }
     }
   })
+     .state('bappBijeli.kontakt', {
+    url: '/kontakt',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/kontakt.html',
+        controller:"KontaktCtrl"
+      }
+    }
+  })
+  .state('appBijeli.kontakt', {
+    url: '/kontakt2',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/kontakt.html',
+        controller:"KontaktCtrl"
+      }
+    }
+  })
+    .state('appBijeli.about', {
+    url: '/about',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/aboutUs.html',
+        controller:"AboutCtrl"
+      }
+    }
+  })
+  
+      .state('bappBijeli.about', {
+    url: '/about1',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/aboutUs.html',
+        controller:"AboutCtrl"
+      }
+    }
+  })
+  
+
    .state('bapp.profil', {
     url: '/profil',
     views: {
       'menuContent': {
-        templateUrl: 'templates/profil.html',
-        controller: 'ProfilCtrl'
+        templateUrl: 'templates/profil.html'
       }
     }
   })
@@ -129,17 +169,7 @@ window.FirebasePlugin.onNotificationOpen(function(notification) {
     url: '/edit',
     views: {
       'menuContent': {
-        templateUrl: 'templates/editProfil.html',
-        controller:'EditProfilCtrl'
-      }
-    }
-  })
-   .state('bapp.map', {
-    url: '/map',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/map.html',
-        controller:'MapCtrl'
+        templateUrl: 'templates/editProfil.html'
       }
     }
   })

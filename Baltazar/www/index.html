@@ -34,9 +34,12 @@
 
   <!-- cordova script (this will be a 404 during development) -->
   <script src="lib/ngCordova/dist/ng-cordova.js"></script>
-  <script src="cordova.js"></script>
-  <script src="/lib/ngmap/build/scripts/ng-map.min.js"></script>
+  <script src="cordova.js"></script> 
   <!-- your app's js -->
+
+ <script src="lib/ngmap/build/scripts/ng-map.min.js"></script>
+
+
   <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/ProfilCtrl.js"></script>
@@ -48,11 +51,10 @@
   <script src="js/MeetUsCtrl.js"></script>
   <script src="js/AboutCtrl.js"></script>
 
-
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd-r2XCw5gvxC1OwDLBsC-jIjltOQrNzI&callback=initMap">
-
-  </script>
-
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd-r2XCw5gvxC1OwDLBsC-jIjltOQrNzI&callback=initMap">
+    </script>
+ 
 </head>
 
 <body ng-app="starter">

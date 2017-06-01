@@ -3,7 +3,7 @@ angular.module('starter')
  $scope.title;
  $scope.description;
  $scope.image;
- $scope.images=[];
+ $scope.images=[]; 
    var request =$http({            
             method: "POST",
             url: 'https://baltazarapp.bak.hr/rest/newsDetails.php',

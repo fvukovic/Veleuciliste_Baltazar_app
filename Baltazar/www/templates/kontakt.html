@@ -1,11 +1,16 @@
- <ion-view     ><ion-content style="margin-top: 125px" class="content">  <br>
+<ion-view     ><ion-content style="margin-top: 125px" class="content">  <br>
     <h4 style="padding-left:4px" ng-bind-html="title" class="vijest-naslov"> </h4>    
-     <div> 
+     <div>    
             <img class="logo-bijeli" src="https://baltazarapp.bak.hr/images/large/{{image}}" ng-if="image!=null"  />  
          <img class="logo-bijeli"  ng-if="image==null  "  src="img/logo_bijeli.jpg"/>  <br> 
          <p style="padding-left: 4px" ng-bind-html="description"  class="vijest-body">      
               </p>        
+     </div><br>
+     <div   ng-repeat="image in images">
+            <img class="logo-bijeli" src="https://baltazarapp.bak.hr/images/large/{{image['image']}}" ng-if="image!=null"  />  
+
      </div>
+     
      <br/>
   </ion-content>
   </ion-view>

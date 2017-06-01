@@ -1,20 +1,18 @@
 <ion-side-menus   enable-menu-with-back-views="false">
-  <ion-side-menu-content>
-    <ion-nav-bar   class=" mynavbar">
+  <ion-side-menu-content drag-content="false">
+    <ion-nav-bar   class=" mynavbar-bijeli">
     
-      <ion-nav-buttons side="left"><img class="logo"   /> 
-           </ion-nav-buttons>
-      <ion-nav-buttons side="right">
-          
-        
-       <button class="button " style=  "margin-right: 15px;margin-top:5px;  height: 53px; border:none;   display:block; background-color: #1C3D7A;
+        <ion-nav-buttons side="center"> <img class="logoB" src="img/logo_bijeli.jpg"  /> 
+          </ion-nav-buttons> 
+      <ion-nav-buttons side="right"> 
+       <button class="button " style=  "margin-right: 15px;margin-top:5px;  height: 53px; border:none;   display:block; background-color: white;
    
   width: 53px;  "   menu-toggle="left">
-    <img class="title-image" src="img/menu-icon.png" width="30px;"   style="margin-top: 30px;background-color: #1C3D7A;" /> 
+    <img class="title-image" src="img/menu-icon -blue.png" width="30px;"   style="margin-top: 30px;background-color: white" /> 
     </button> 
         </button></div>
       </ion-nav-buttons>
-    </ion-nav-bar style>
+    </ion-nav-bar>
     <ion-nav-view  name="menuContent"></ion-nav-view>
     
   </ion-side-menu-content>
@@ -23,7 +21,7 @@
     <ion-header-bar  style="background-color:  #1C3D7A; border-style:none"> 
     </ion-header-bar>
     <ion-content class="content">
-     <ion-list  style="background-color:#1C3D7A;">
+       <ion-list  style="background-color:#1C3D7A;">
         <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('bapp.home')"   menu-close  >
           Home Screen
         </ion-item>   

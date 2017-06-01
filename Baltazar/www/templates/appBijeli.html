@@ -1,5 +1,5 @@
 <ion-side-menus   enable-menu-with-back-views="false">
-  <ion-side-menu-content>
+  <ion-side-menu-content drag-content="false">
     <ion-nav-bar   class=" mynavbar-bijeli">
     
         <ion-nav-buttons side="center"> <img class="logoB" src="img/logo_bijeli.jpg"  /> 
@@ -21,26 +21,23 @@
     <ion-header-bar  style="background-color:  #1C3D7A; border-style:none"> 
     </ion-header-bar>
     <ion-content class="content">
-      <ion-list  style="background-color:#1C3D7A;">
+     <ion-list  style="background-color:#1C3D7A;">
         <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('app.home')"   menu-close  >
-          Naslovnica
-        </ion-item>
-        <ion-item  style="background-color:#1C3D7A ;color:white;font-size: 22px;;border:#1C3D7A;" menu-close ng-click="openState('bapp.profil')">
-         Uredi profil
-        </ion-item>
-           <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('app.home')"   menu-close  >
+          Home Screen
+        </ion-item>   
+        <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('bappBijeli2.about')"   menu-close  >
           O veleučilištu
         </ion-item> 
-        <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('app.home')"   menu-close  >
+        <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('bappBijeli2.kontakt')"   menu-close  >
           Kontakt
         </ion-item> 
-        <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('app.home')"   menu-close  >
+        <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('app.meet')"   menu-close  >
           Upoznajte nas
         </ion-item> 
-         <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('bapp.map')"   menu-close  >
+        <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('app.map')"   menu-close  >
           Karta
         </ion-item>     
-    </ion-item>
+             
       </ion-list>
     </ion-content>
   </ion-side-menu>
