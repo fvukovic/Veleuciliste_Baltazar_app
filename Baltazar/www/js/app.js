@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap' ])
-.run(function($ionicPlatform ) {
+.run(function($ionicPlatform,$http) {
   $ionicPlatform.ready(function() { 
     console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -15,6 +15,31 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap' ]
       cordova.plugins.Keyboard.disableScroll(true);
 
     }  
+    if(window.localStorage.getItem("token")==null){
+    window.FirebasePlugin.getToken(function(token) {
+    var request =$http({            
+            method: "POST",
+            url: 'https://baltazarapp.bak.hr/rest/createUser.php',
+            data:{token:token,os:"Android"},
+            headers : {'Content-Type' : 'application/x-www-form-urlencoded' }
+            
+        }); 
+        request.success(function (data) { 
+       
+       
+      });
+      window.localStorage.setItem("token",token);
+    console.log(token);
+}, function(error) {
+    console.error(error);
+});
+}
+window.FirebasePlugin.onNotificationOpen(function(notification) {
+    console.log(notification[0]);
+    alert("Stigla je notifikacija");
+}, function(error) {
+    console.error(error);
+});
        
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
@@ -54,6 +79,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap' ]
 
   .state('app.home', {
     url: '/home',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/home.html',
@@ -63,6 +89,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap' ]
   })
   .state('app.map', {
     url: '/map',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/map.html',
@@ -72,6 +99,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap' ]
   })
     .state('bapp.map', {
     url: '/map2',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/map.html',
@@ -81,6 +109,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap' ]
   })
    .state('bapp.meet', {
     url: '/meet',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/meetUs.html',
@@ -90,6 +119,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap' ]
   })
      .state('app.meet', {
     url: '/meet2',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/meetUs.html',
@@ -99,6 +129,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap' ]
   })
     .state('bapp.home', {
     url: '/student',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/home.html',
@@ -111,6 +142,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap' ]
 
   .state('bappBijeli.detalji', {
     url: '/detalji/:vijestId',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/detalji.html',
@@ -119,7 +151,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap' ]
     }
   })
      .state('bappBijeli.kontakt', {
-    url: '/kontakt',
+    url: '/kontakt2',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/kontakt.html',
@@ -129,6 +162,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap' ]
   })
   .state('appBijeli.kontakt', {
     url: '/kontakt2',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/kontakt.html',
@@ -138,6 +172,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap' ]
   })
     .state('appBijeli.about', {
     url: '/about',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/aboutUs.html',
@@ -148,6 +183,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap' ]
   
       .state('bappBijeli.about', {
     url: '/about1',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/aboutUs.html',
@@ -159,25 +195,31 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','ngMap' ]
 
    .state('bapp.profil', {
     url: '/profil',
+    cache: false,
     views: {
       'menuContent': {
-        templateUrl: 'templates/profil.html'
+        templateUrl: 'templates/profil.html',
+        controller:"ProfilCtrl"
       }
     }
   })
     .state('bapp.edit', {
     url: '/edit',
+    cache: false,
     views: {
       'menuContent': {
-        templateUrl: 'templates/editProfil.html'
+        templateUrl: 'templates/editProfil.html',
+        controller:"EditProfilCtrl"
       }
     }
   })
    .state('bapp.login', {
     url: '/login',
+    cache: false,
     views: {
       'menuContent': {
-        templateUrl: 'templates/login.html'
+        templateUrl: 'templates/login.html',
+        controller:'LoginCtrl'
       }
     }
   })

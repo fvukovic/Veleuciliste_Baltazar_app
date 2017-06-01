@@ -3,8 +3,8 @@
     <h3 class="naslov">Upoznajte nas </h3>
     <hr>
      <div ui-sref="bappBijeli.detalji({vijestId:{{vijest['id']}}})" ng-repeat="vijest in vijesti">
-         <img class="logo-bijeli" src="https://baltazarapp.bak.hr/images/large/{{vijest['image']}}" ng-if="vijest['image']!=null"  />  
-         <img class="logo-bijeli"  ng-if="vijest['image']==null  "  src="img/logo_bijeli.jpg"/> 
+         <img class="logo-bijeli" src="https://baltazarapp.bak.hr/images/large/{{vijest['images'][0]}}" ng-if="vijest['images'][0]!=null"  />  
+         <img class="logo-bijeli"  ng-if="vijest['images'][0]==null  "  src="img/logo_bijeli.jpg"/> 
           
          <h4 class="vijest-naslov" > {{vijest['title']}}</h4>     
          <p ng-bind-html="vijest['description'].substring(0,322);"  class="vijest-body"> 
