@@ -1,0 +1,19 @@
+<ion-view     ><ion-content  class="content">
+    <img src="img/logo.png" class="logo-home"/>
+    <h3 class="naslov">Upoznajte nas </h3>
+    <hr>
+     <div ui-sref="bappBijeli.detalji({vijestId:{{vijest['id']}}})" ng-repeat="vijest in vijesti">
+         <img class="logo-bijeli" src="https://baltazarapp.bak.hr/images/large/{{vijest['image']}}" ng-if="vijest['image']!=null"  />  
+         <img class="logo-bijeli"  ng-if="vijest['image']==null  "  src="img/logo_bijeli.jpg"/> 
+          
+         <h4 class="vijest-naslov" > {{vijest['title']}}</h4>     
+         <p ng-bind-html="vijest['description'].substring(0,322);"  class="vijest-body"> 
+ 
+             {{vijest['title'].substring(0,322);}}
+             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+              </p>       
+              <a >više...</a><br/><br/>
+     </div>
+     
+  </ion-content>
+  </ion-view>

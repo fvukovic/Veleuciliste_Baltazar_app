@@ -1,39 +1,40 @@
+
 <ion-view style="background-color: #1C3D7A"><ion-content class="content content-login"> 
    
     <h3 class="naslov">Uredi svoj profil </h3>
     <hr> 
     <br/>
          <label   class="profil-label"> e-mail</label>     
- <div   class="list div-godina"  style="margin-left: -30px;">
+ <div  class="list div-godina"  style="margin-left: -30px;">
   <label  class="item item-input  select-godina" style="width: 240px;" >   
-     <input type="text" /> 
+     <input id="mail"  type="text" /> 
   </label>
 </div>
          <label class="profil-label">broj telefona</label>     
  <div   class="list div-godina"  style="margin-left: -30px;">
- <label  class="item item-input  select-godina" style="width: 240px;" >        <input type="text" /> 
+ <label  class="item item-input  select-godina" style="width: 240px;" >        <input id="tel"  type="text" /> 
   </label>
 </div>
          <label   class="profil-label"> adresa</label>     
  <div   class="list div-godina"  style="margin-left: -30px;">
   <label  class="item item-input  select-godina" style="width: 240px;" >   
-     <input type="text" /> 
+     <input id="adresa"  type="text" /> 
   </label>
 </div>
          <label   class="profil-label"> poštanski broj</label>     
  <div   class="list div-godina"  style="margin-left: -30px;">
    <label  class="item item-input  select-godina" style="width: 240px;" >   
-     <input type="text" /> 
+     <input id="postanski"  type="text" /> 
   </label>
 </div>
          <label   class="profil-label"> mjesto</label>     
  <div   class="list div-godina"  style="margin-left: -30px;">
   <label  class="item item-input  select-godina" style="width: 240px;" >   
-     <input type="text" /> 
+     <input id="mjesto"  type="text" /> 
   </label>
 </div>
 <br/>
-   <a class="profil-spremi" ui-sref="bapp.home" >Spremi</a>
+   <a class="profil-spremi" ng-click="saveData()" >Spremi</a>
 </div>
 <br/><br/>
   </ion-content>

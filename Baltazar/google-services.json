@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "874126824189",
+    "firebase_url": "https://baltazar-810a4.firebaseio.com",
+    "project_id": "baltazar-810a4",
+    "storage_bucket": "baltazar-810a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874126824189:android:d9cb0d270d34487a",
+        "android_client_info": {
+          "package_name": "com.ionicframework.baltazar277384"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "874126824189-l9471imrlpeg55hq7ci2k4pq07qtvthe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjBMBqMEDIfmLLXhZ9xI7UcwaJ7CeOsLA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
