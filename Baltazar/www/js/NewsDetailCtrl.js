@@ -15,14 +15,15 @@ angular.module('starter')
        console.log(data);
        $scope.title=data[0]['title']
         $scope.description=data[0]['description']
-         $scope.image=data[0]['images'][0]
-         for(var v=1;v<data[0]['images'].length;v++){
-               $scope.images.push({
-        image:data[0]['images'][v],
+         $scope.image=data[0]['image']
        
-      });
+       //  for(var v=1;v<data[0]['images'].length;v++){
+         //      $scope.images.push({
+       // image:data[0]['images'][v],
        
-         }
+     // });
+       
+       //  }
 console.log("slikice"+$scope.images.length);
         
 });
