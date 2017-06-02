@@ -1,6 +1,6 @@
 <ion-view style="background-color: #1C3D7A">
     <ion-content class="content content-login">
-        <h3 class="podaci-labela">Student</h3>
+        <h3 class="podaci-labela">{{ime+" "}}{{prezime}}</h3>
         <br> 
         <p class="podaci-labela">
           Godina
@@ -14,18 +14,19 @@
             {{smjer}}
         </p>
         <br/>
+        <p class="podaci-labela">E-mail:</p>
         <p class="podaci-labela">
-            filip.vukovic@gmail.com
+            {{mail}}
         </p>
+        <p class="podaci-labela">Telefon:</p>
         <p class="podaci-labela">
-            0915745868
+            {{tel}}
         </p>
+        <p class="podaci-labela">Adresa:</p>
         <p class="podaci-labela">
-            ul. S. Radića 15 
+            {{adresa}}
         </p>
-         <p class="podaci-labela"> 
-            10000, Zagreb
-        </p><br/>
+          <br/>
         <a   style="color: yellow; display: table;
   margin: 0 auto;"  ui-sref="bapp.edit">Izmijeni podatke</a>
 
