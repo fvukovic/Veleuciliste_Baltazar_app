@@ -2,16 +2,15 @@
     <img src="img/logo.png" class="logo-home"/>
     <h3 class="naslov">Novosti </h3>
     <hr>  
-
+  
      <div ui-sref="bappBijeli.detalji({vijestId:{{vijest['id']}}})" ng-repeat="vijest in vijesti">
          <img class="logo-bijeli" src="https://baltazarapp.bak.hr/images/large/{{vijest['images'][0]}}" ng-if="vijest['images'][0]!=null"  />  
          <img class="logo-bijeli"  ng-if="vijest['images'][0]==null  "  src="img/logo_bijeli.jpg"/>  
          <h4 class="vijest-naslov" > {{vijest['title']}}</h4>     
-         <p ng-bind-html="vijest['description'].substring(0,161);"  class="vijest-body"> 
+         <div style=" height: 4em;   
+    overflow: hidden;" ng-bind-html="vijest['description']"  class="vijest-body"> 
  
-             {{vijest['title'].substring(0,322);}}
-             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
-              </p>       
+              </div>       
               <a >više...</a><br/><br/>
      </div>
      
