@@ -1,64 +1,46 @@
-
-<ion-view style="background-color: #1C3D7A"><ion-content class="content content-login"> 
+<ion-view style="background-color: #1C3D7A">
+  <ion-content class="content content-login" style="text-align:center;">
     <style>
-  input{
-  background-color: red;
-  }
-  </style>
+
+    </style>
     <h3 class="naslov">Uredi svoj profil </h3>
-    <hr> 
+    <hr>
     <br/>
-          <label   class="login-label"> Godina</label>     
- <div   class="list div-godina"  style="margin-left: -30px;">
-  <label  class="item item-input item-select select-godina"  >   
-   <select ng-model="odabraniSmjerg"  ng-change="showSelectValueG(odabraniSmjerg)"   style="width: auto; left: 65px"  > 
-     <option value="{{godina['id']}}" ng-repeat="godina in godine">{{godina["title"]}}</option>
-    </select>
-  </label>
-  </label>
-</div>
-<label   class="login-label"> Smjer</label>     
- <div   class="list div-godina"  style="margin-left: -30px;">
-  <label  class="item item-input item-select select-godina" style="width: 260px; " >   
-     <select ng-model="odabraniSmjer"  ng-change="showSelectValue(odabraniSmjer)"  style="position:absolute;width: 300px;left: -34px;  overflow: visible;max-width:none;text-align: left"  >
-         <option value="0">Neregistrirani korisnik</option>
-     <option value="{{smjer['id']}}" style="text-align: left" ng-repeat="smjer in smjerovi">{{smjer["title"]}}</option>   
-    </select>
+    <label class="login-label"> Godina</label>
+    <label class="item item-input item-select select-godina" style="width: 260px; margin: 0px auto">   
+<select  ng-change="showSelectValueG(godina)"  style="position:absolute;width: 300px;left: -34px;  overflow: visible;max-width:none;text-align: left" ng-model="godina" ng-options="color.title as color.id for color in godine"  >
+  
+ </select>
+  </label> <br>
+    <label class="login-label" style="margin: 0px auto"> Smjer</label>
+
+    
+
+
+
+    <label class="item item-input item-select select-godina" style="width: 260px; margin: 0px auto">   
+      <select  ng-change="showSelectValue(smjer)"  style="position:absolute;width: 300px;left: -34px;  overflow: visible;max-width:none;text-align: left" ng-model="smjer" ng-options="color.title as color.id for color in smjerovi"  >
+  
+ </select>
   </label><br/>
-  <label   class="profil-label"> Ime</label>     
- <div  class="list div-godina"  style="margin-left: -30px;">
-  <label  class="item item-input  select-godina" style="width: 240px;" >   
-     <input id="ime"  style="margin-left: 30px;"  type="text" /> 
-  </label>
-</div>
-         <label class="profil-label">Prezime</label>     
- <div   class="list div-godina"  style="margin-left: -30px;">
- <label  class="item item-input  select-godina" style="width: 240px;" >        <input id="prezime"  style="margin-left: 30px;"  type="text" /> 
-  </label>
-</div>
-         <label   class="profil-label"> e-mail</label>     
- <div  class="list div-godina"  style="margin-left: -30px;">
-  <label  class="item item-input  select-godina" style="width: 240px;" >   
-     <input id="mail"  style="margin-left: 30px;"  type="text" /> 
-  </label>
-</div>
-         <label class="profil-label">broj telefona</label>     
- <div   class="list div-godina"  style="margin-left: -30px;">
- <label  class="item item-input  select-godina" style="width: 240px;" >        <input id="tel"  style="margin-left: 30px;"  type="text" /> 
-  </label>
-</div>
-         <label   class="profil-label"> adresa</label>     
- <div   class="list div-godina"  style="margin-left: -30px;">
-  <label  class="item item-input  select-godina" style="width: 240px;" >   
-     <input id="adresa"  style="margin-left: 30px;"  type="text" /> 
-  </label>
-</div>
-  
-  
-</div>
-<br/>
-   <a class="profil-spremi" ng-click="saveData()" >Spremi</a>
-</div>
-<br/><br/>
+    <label class="profil-label"> Ime</label>
+     
+    <input id="ime" ng-model="ime" style="width: 260px; margin: 0 auto;" type="text" />
+    <br>
+    <label class="profil-label">Prezime</label>
+    <input id="prezime" ng-model="prezime" style="width: 260px; margin: 0 auto;" type="text" /> <br>
+    <label class="profil-label"> E-mail</label>
+    <input id="mail" ng-model="mail" style="width: 260px; margin: 0 auto;" type="text" /> <br>
+    <label class="profil-label">Broj telefona</label>
+    <input id="tel" ng-model="tel" style="width: 260px; margin: 0 auto;" type="text" /> <br>
+    <label class="profil-label"> Adresa</label>
+    <input id="adresa" ng-model="adresa" style="width: 260px; margin: 0 auto;" type="text" /> <br>
+
+
+    </div>
+    <br/>
+    <a class="profil-spremi" ng-click="saveData()">Spremi</a>
+    </div>
+    <br/><br/>
   </ion-content>
-  </ion-view>
+</ion-view>

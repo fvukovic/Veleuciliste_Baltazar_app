@@ -1,16 +1,19 @@
-<ion-view     ><ion-content style="margin-top: 125px" class="content">  <br>
-    <h4 style="padding-left:4px" ng-bind-html="title" class="vijest-naslov"> </h4>    
-     <div>    
-            <img class="logo-bijeli" src="https://baltazarapp.bak.hr/images/large/{{image}}" ng-if="image!=null"  />  
-           <br> 
-         <p style="padding-left: 4px" ng-bind-html="description"  class="vijest-body">      
-              </p>        
-     </div><br>
-     <div   ng-repeat="image in images">
-            <img class="logo-bijeli" src="https://baltazarapp.bak.hr/images/large/{{image['image']}}" ng-if="image!=null"  />  
-
-     </div>
-     
-     <br/>
+<ion-view>
+  <ion-content style="margin-top: 125px" class="content"> <br>
+    <h4 style="padding-left:4px" ng-bind-html="title" class="vijest-naslov"> </h4>
+    <div>
+      <img class="logo-bijeli" src="https://baltazarapp.bak.hr/images/large/{{image}}" ng-if="image!=null" />
+      <br>
+      <p style="padding-left: 4px" ng-bind-html="description" class="vijest-body">
+      </p> <br> 
+      <p>
+         <p style="padding-left:4px" class="vijest-body" ng-click="goOnURL('{{link}}')" class="info" > Link:     {{linkTitle}} </p>
+      </p>
+    </div><br>
+    <div ng-repeat="image in images">
+      <img class="logo-bijeli" src="https://baltazarapp.bak.hr/images/large/{{image['image']}}" ng-if="image!=null" />
+      <br>
+    </div> 
+    <br/>
   </ion-content>
-  </ion-view>
+</ion-view>

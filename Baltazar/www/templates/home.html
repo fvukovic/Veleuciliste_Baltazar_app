@@ -1,17 +1,23 @@
-<ion-view     ><ion-content  class="content">
+ <ion-view     ><ion-content  class="content" style="  padding-left: 0px;
+       padding-right: 0px;"> 
+          <ion-refresher on-refresh="remMedia()" style="top:7px">
+    </ion-refresher> 
+    
+       
+
     <img src="img/logo.png" class="logo-home"/>
-    <h3 class="naslov">Novosti </h3>
-    <hr>  
+    <h3 class="naslov" style="margin-left: 30px;">{{tip}}</h3>
+    <hr style="margin-left: 30px;margin-right: 30px;">  
   
      <div ui-sref="bappBijeli.detalji({vijestId:{{vijest['id']}}})" ng-repeat="vijest in vijesti">
          <img class="logo-bijeli" src="https://baltazarapp.bak.hr/images/large/{{vijest['images'][0]}}" ng-if="vijest['images'][0]!=null"  />  
          <img class="logo-bijeli"  ng-if="vijest['images'][0]==null  "  src="img/logo_bijeli.jpg"/>  
-         <h4 class="vijest-naslov" > {{vijest['title']}}</h4>     
+         <h4 class="vijest-naslov"style="margin-left: 30px;margin-right: 30px;" > {{vijest['title']}}</h4>     
          <div style=" height: 4em;   
-    overflow: hidden;" ng-bind-html="vijest['description']"  class="vijest-body"> 
+    overflow: hidden;margin-left: 30px;margin-right: 30px;" ng-bind-html="vijest['description']"  class="vijest-body"> 
  
               </div>       
-              <a >više...</a><br/><br/>
+              <a style="margin-left: 30px;margin-right: 30px;" >više...</a><br/><br/>
      </div>
      
   </ion-content>

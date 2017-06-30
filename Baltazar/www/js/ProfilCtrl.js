@@ -20,9 +20,9 @@ angular.module('starter')
     });
     request.success(function (data) {console.log(data);
       for (var v = 0; v < data.length; v++) {
-        
-        if (data[v]["id"] == window.localStorage.getItem("godina")) {
-          $scope.godina = data[0]["title"] ; 
+      
+        if (data[v]["id"] == window.localStorage.getItem("godina")) { 
+          $scope.godina = data[v]["title"] ; 
         }
       }
     });

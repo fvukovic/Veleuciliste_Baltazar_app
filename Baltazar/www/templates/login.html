@@ -7,7 +7,9 @@
  <div   class="list div-godina"  style="margin-left: -30px;">
   <label  class="item item-input item-select select-godina"  >   
     <select ng-model="odabraniSmjerg"  ng-change="showSelectValueG(odabraniSmjerg)"   style="width: auto; left: 65px"  > 
-     <option selected value="{{godina['id']}}" ng-repeat="godina in godine">{{godina["title"]}}</option>
+    
+     <option  value="{{godina['id']}}" ng-repeat="godina in godine">{{godina["title"]}}</option>
+       <option selected value="0"  >Duh</option>
     </select>
   </label>
 </div>
@@ -15,8 +17,9 @@
  <div   class="list div-godina"  style="margin-left: -30px;">
   <label  class="item item-input item-select select-godina" style="width: 260px; " >   
     <select ng-model="odabraniSmjer"  ng-change="showSelectValue(odabraniSmjer)"  style="position:absolute;width: 300px;left: -34px;  overflow: visible;max-width:none;text-align: left"  >
-         <option  value="0">Neregistrirani korisnik</option>
-     <option selected value="{{smjer['id']}}" style="text-align: left" ng-repeat="smjer in smjerovi">{{smjer["title"]}}</option>   
+       
+     <option   value="{{smjer['id']}}" style="text-align: left" ng-repeat="smjer in smjerovi">{{smjer["title"]}}</option>   
+       <option selected value="0">Neregistrirani korisnik</option>
     </select>
   </label><br/> 
 <br/>

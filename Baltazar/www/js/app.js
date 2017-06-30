@@ -87,6 +87,98 @@ window.FirebasePlugin.onNotificationOpen(function(notification) {
       }
     }
   })
+
+    .state('app.preddiplomski', {
+    url: '/preddiplomski',
+    cache: false,
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/home.html',
+          controller:'HomeCtrl'
+      }
+    }
+  })
+
+    .state('bapp.preddiplomski', {
+    url: '/preddiplomski',
+    cache: false,
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/home.html',
+          controller:'HomeCtrl'
+      }
+    }
+  })
+
+      .state('app.diplomski', {
+    url: '/diplomski',
+    cache: false,
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/home.html',
+          controller:'HomeCtrl'
+      }
+    }
+  })
+        .state('bapp.diplomski', {
+    url: '/diplomski',
+    cache: false,
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/home.html',
+          controller:'HomeCtrl'
+      }
+    }
+  })
+
+
+      .state('app.medunarodna', {
+    url: '/medunarodna',
+    cache: false,
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/home.html',
+          controller:'HomeCtrl'
+      }
+    }
+  })
+
+       .state('bapp.medunarodna', {
+    url: '/medunarodna',
+    cache: false,
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/home.html',
+          controller:'HomeCtrl'
+      }
+    }
+  })
+
+
+      .state('app.studenti', {
+    url: '/preddiplomski2',
+    cache: false,
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/home.html',
+          controller:'HomeCtrl'
+      }
+    }
+  })
+
+        .state('bapp.studenti', {
+    url: '/preddiplomski2',
+    cache: false,
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/home.html',
+          controller:'HomeCtrl'
+      }
+    }
+  })
+
+
+  
   .state('app.map', {
     url: '/map',
     cache: false,
@@ -128,7 +220,7 @@ window.FirebasePlugin.onNotificationOpen(function(notification) {
     }
   })
     .state('bapp.home', {
-    url: '/student',
+    url: '/home',
     cache: false,
     views: {
       'menuContent': {

@@ -1,4 +1,4 @@
-<ion-view     ><ion-content style="margin-top: 125px" class="content">  <br>
+<ion-view     ><ion-content style="margin-top: 125px; text-align:center;" class="content">  <br>
     <h4 style="padding-left:4px" ng-bind-html="title" class="vijest-naslov"> </h4>    
      <div>    
             <img class="logo-bijeli" src="https://baltazarapp.bak.hr/images/large/{{image}}" ng-if="image!=null"  />  
@@ -10,7 +10,35 @@
             <img class="logo-bijeli" src="https://baltazarapp.bak.hr/images/large/{{image['image']}}" ng-if="image!=null"  />  
 
      </div>
-     
+
+                <label   class="profil-label"> Ime i prezime</label>     
+   
+     <input id="ime"  style=" width:240px ;
+    margin: 0 auto;
+    text-align:left;"  type="text" /> 
+   <br>
+       <label   class="profil-label"> Adresa</label>      
+     <input id="adresa"  style=" width:240px ;
+    margin: 0 auto;
+    text-align:left;"  type="text" />  <br>
+       <label   class="profil-label"> E-mail</label>       
+     <input id="mail"  style=" width:240px ;
+    margin: 0 auto;
+    text-align:left;"  type="text" />     <br>
+       <label   class="profil-label"> Telefon</label>       
+     <input id="tel"  style=" width:240px ;
+    margin: 0 auto;
+    text-align:left;"  type="text" />     <br>
+       <label   class="profil-label">Poruka</label>     
+ 
+ <textarea id="message"  style=" width: 240px;margin: 0 auto;
+    text-align:left;"id="message" sty  rows="10"></textarea>
      <br/>
+       
+</div>
+<br/>
+   <a class="profil-spremi" style="margin: 0 auto;
+    text-align:left;" ng-click="sendEmail()" >Pošalji</a>
+</div>  <br/>  <br/>
   </ion-content>
   </ion-view>

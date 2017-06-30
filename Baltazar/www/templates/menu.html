@@ -1,46 +1,70 @@
-<ion-side-menus   enable-menu-with-back-views="false">
+<ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content drag-content="false">
-    <ion-nav-bar   class=" mynavbar">
-    
-      <ion-nav-buttons side="left"><img class="logo"   /> 
-        <a  ng-click="openState('bapp.login')"  style="height: 34px;width: 140px; background-color: #F5CD1D ;margin-left: -6px; margin-top: 30px;color: white;font-size:23px;padding-left: 20px; padding-top: 7px;text-align: center" >Prijava</a>
-        </ion-nav-buttons>
+    <ion-nav-bar class=" mynavbar">
+
+      <ion-nav-buttons side="left"><img class="logo" />
+        <a ng-click="openState('bapp.login')" style="height: 34px;width: 140px; background-color: #F5CD1D ;margin-left: -6px; margin-top: 30px;color: white;font-size:23px;padding-left: 20px; padding-top: 7px;text-align: center">Prijava</a>
+      </ion-nav-buttons>
       <ion-nav-buttons side="right">
-          
-        
-       <button class="button " style=  "margin-right: 15px;margin-top:5px;  height: 53px; border:none;   display:block; background-color: #1C3D7A;
+
+
+        <button class="button " style="margin-right: 15px;margin-top:5px;  height: 53px; border:none;   display:block; background-color: #1C3D7A;
    
-  width: 53px;  "   menu-toggle="left">
-    <img class="title-image" src="img/menu-icon.png" width="30px;"   style="margin-top: 30px;background-color: #1C3D7A;" /> 
-    </button> 
-        </button></div>
+  width: 53px;  " menu-toggle="left">
+          <img class="title-image" src="img/menu-icon.png" width="30px;" style="margin-top: 30px;background-color: #1C3D7A;" />
+          </button>
+          </button>
+          </div>
       </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-nav-view  name="menuContent"></ion-nav-view>
-    
+    <ion-nav-view name="menuContent"></ion-nav-view>
+
   </ion-side-menu-content>
 
   <ion-side-menu style="background-color: #1C3D7A" side="left">
-    <ion-header-bar  style="background-color:  #1C3D7A; border-style:none"> 
+    <ion-header-bar style="background-color:  #1C3D7A; border-style:none">
     </ion-header-bar>
     <ion-content class="content">
-      <ion-list  style="background-color:#1C3D7A;">
-        <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('app.home')"   menu-close  >
+      <ion-list style="background-color:#1C3D7A;">
+        <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('app.home')"
+          menu-close>
           Novosti
-        </ion-item>   
-        <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('appBijeli.about')"   menu-close  >
-          O veleučilištu
-        </ion-item> 
-        <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('appBijeli.kontakt')"   menu-close  >
-          Kontakt
-        </ion-item> 
-        <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('app.meet')"   menu-close  >
-          Upoznajte nas
-        </ion-item> 
-        <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('app.map')"   menu-close  >
-          Karta
-        </ion-item>     
-             
+          </ion-item>
+          <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('appBijeli.about')"
+            menu-close>
+            O veleučilištu
+            </ion-item>
+            <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" menu-close>
+              Studijski programi
+            </ion-item>
+            <ion-item style="margin-left: 20px;margin-top:-15px;background-color:transparent ;border:#1C3D7A;color:white;font-size: 19px;"
+              ng-click="openState('app.preddiplomski')" menu-close>
+              preddiplomski
+              </ion-item>
+              <ion-item style="margin-left: 20px;margin-top:-20px;background-color:transparent ;border:#1C3D7A;color:white;font-size: 19px;"
+                ng-click="openState('app.diplomski')" menu-close>
+                diplomski
+                </ion-item>
+                <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('app.studenti')"
+                  menu-close>
+                  Studenti
+                  </ion-item>
+                  <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('app.medunarodna')"
+                    menu-close>
+                    Međunarodna suradnja
+                    </ion-item>
+                    <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('appBijeli.kontakt')"
+                      menu-close>
+                      Kontakt
+                      </ion-item>
+                      <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('app.meet')"
+                        menu-close>
+                        Upoznajte nas
+                        </ion-item>
+                        <ion-item style="background-color:#1C3D7A ;border:#1C3D7A;color:white;font-size: 22px;" ng-click="openState('app.map')" menu-close>
+                          Karta
+                        </ion-item>
+
       </ion-list>
     </ion-content>
   </ion-side-menu>

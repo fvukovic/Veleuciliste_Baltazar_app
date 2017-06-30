@@ -4,6 +4,10 @@ angular.module('starter')
  $scope.description;
  $scope.image;
  $scope.images=[];
+ $scope.adresa;
+ $scope.ime;
+ $scope.tel
+
    var request =$http({            
             method: "POST",
             url: 'https://baltazarapp.bak.hr/rest/contact.php',
@@ -27,7 +31,35 @@ console.log("slikice"+$scope.images.length);
         
 });
 
- 
+  $scope.sendEmail = function () {
+        
+            $scope.email = document.getElementById("mail").value;
+            $scope.message = document.getElementById("message").value;
+            $scope.ime= document.getElementById("ime").value;
+            $scope.adresa=document.getElementById("adresa").value;            
+            $scope.tel=document.getElementById("tel").value;
+                if ($scope.email == "" || $scope.message == "") {
+                alert("E-mail i poruka ne smiju biti prazni!");
+                return;
+            } 
+            var request = $http({
+
+                method: "POST",
+                url: 'https://baltazarapp.bak.hr/rest/mail_sender.php',
+                data: { mail: $scope.email, poruka: $scope.message, ime: $scope.ime, adresa: $scope.adresa, tel : $scope.tel},
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+
+            }); 
+            request.success(function (data) {
+                console.log("PORUKA"+data);
+
+            });
+
+
+
+
+            
+        }
 
       });
 

@@ -1,42 +1,59 @@
 angular.module('starter')
     .controller('EditProfilCtrl', function ($scope, $stateParams, $http, $state) {
-        $scope.smjerovi
+        $scope.smjerovi = {};
+        $scope.smjer = window.localStorage.getItem("smjer");
+        $scope.smjerRe = window.localStorage.getItem("smjer");
+        $scope.godina = window.localStorage.getItem("godina");
         var request = $http({
             method: "GET",
             url: 'https://baltazarapp.bak.hr/rest/smjerovi.php',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-        });
-        request.success(function (data) {
-            $scope.smjerovi = data;
-            console.log(data);
         });
 
-        $scope.smjerovi;
-        $scope.godine;
-        $scope.odabraniSmjer;
-        $scope.odabraniSmjerg;
-        $scope.odabranaGodina;
-        var request = $http({
-            method: "GET",
-            url: 'https://baltazarapp.bak.hr/rest/smjerovi.php',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-        });
+ 
         request.success(function (data) {
-            $scope.smjerovi = data;
-            console.log(data);
+
+            //         for(var i =0;i<data.length;i++){
+            //           $scope.smjerovi[i]={name: data[i]["title"]};             } 
+            console.log($scope.smjerovi);
+            $scope.smjerovi = [
+                { id: 'Duh', title: '0' },
+            ]
+
+            for (var i = 0; i < data.length; i++) {
+                $scope.smjerovi.push({
+                    id: data[i]["title"], title: data[i]["id"]
+                });
+            }
+
         });
+        $scope.ime = window.localStorage.getItem("ime")
+        $scope.prezime = window.localStorage.getItem("prezime")
+        $scope.mail = window.localStorage.getItem("mail")
+        $scope.tel = window.localStorage.getItem("tel")
+        $scope.adresa = window.localStorage.getItem("adresa")
+
+
         var request = $http({
             method: "GET",
             url: 'https://baltazarapp.bak.hr/rest/godine.php',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
         });
         request.success(function (data) {
-            $scope.godine = data;
+            $scope.godine = [
+                { id: 'Duh', title: '0' },
+            ]
+            for (var i = 0; i < data.length; i++) {
+                $scope.godine.push({
+                    id: data[i]["title"], title: data[i]["id"]
+                });
+            }
             console.log(data);
         });
 
         $scope.showSelectValue = function (mySelect) {
             $scope.odabraniSmjer = mySelect;
+
         }
         $scope.showSelectValueG = function (mySelect) {
             $scope.odabranaGodina = mySelect;
@@ -44,12 +61,16 @@ angular.module('starter')
 
 
         $scope.saveData = function () {
-            if($scope.odabraniSmjer=="" || $scope.odabranaGodina=="" || document.getElementById("ime").value=="" || document.getElementById("prezime").value=="" || document.getElementById("adresa").value=="" || document.getElementById("tel").value=="" || document.getElementById("mail").value==""){
+            if ($scope.odabraniSmjer == "" || $scope.odabranaGodina == "" || document.getElementById("ime").value == "" || document.getElementById("prezime").value == "" || document.getElementById("adresa").value == "" || document.getElementById("tel").value == "" || document.getElementById("mail").value == "") {
                 alert("Nisu svi podaci upisani");
                 return 0;
+            } 
+            if ($scope.odabraniSmjer != null) {
+                window.localStorage.setItem("smjer", $scope.odabraniSmjer);
             }
-            window.localStorage.setItem("smjer", $scope.odabraniSmjer);
-            window.localStorage.setItem("godina", $scope.odabranaGodina);
+            if ($scope.odabranaGodina != null) {
+                window.localStorage.setItem("godina", $scope.odabranaGodina);
+            }
             window.localStorage.setItem("adresa", document.getElementById("adresa").value);
             window.localStorage.setItem("tel", document.getElementById("tel").value);
             window.localStorage.setItem("ime", document.getElementById("ime").value);
@@ -68,7 +89,7 @@ angular.module('starter')
             request.success(function (data) {
 
                 console.log("Prijava" + data);
-                
+
             });
             $state.go("bapp.profil");
 
