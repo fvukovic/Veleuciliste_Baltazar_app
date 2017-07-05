@@ -18,9 +18,20 @@ angular.module('starter')
       url: 'https://baltazarapp.bak.hr/rest/godine.php',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     });
-    request.success(function (data) {console.log(data);
+    request.success(function (data) {console.log();
+        $scope.lista = JSON.parse(window.localStorage.getItem("godina"));
+           if ($scope.lista == null) {
+    $scope.lista = [
+      { id: '-122', title: 'Duh', checked: false },
+    ]
+  }
+        console.log(  $scope.lista );
       for (var v = 0; v < data.length; v++) {
       
+        for(var i =0 ; i<$scope.lista.length;i++ ){
+          console.log($scope.lista[i]);
+        }
+
         if (data[v]["id"] == window.localStorage.getItem("godina")) { 
           $scope.godina = data[v]["title"] ; 
         }

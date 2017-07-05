@@ -7,40 +7,38 @@
     <hr>
     <br/>
     <label class="login-label"> Godina</label>
-    <label class="item item-input item-select select-godina" style="width: 260px; margin: 0px auto">   
-<select  ng-change="showSelectValueG(godina)"  style="position:absolute;width: 300px;left: -34px;  overflow: visible;max-width:none;text-align: left" ng-model="godina" ng-options="color.title as color.id for color in godine"  >
-  
- </select>
-  </label> <br>
-    <label class="login-label" style="margin: 0px auto"> Smjer</label>
+    <ion-checkbox  type='checkbox' value="{{godina['title']}}" ng-click="print(godina)" ng-checked="godina.checked" ng-repeat="godina in godine">{{godina["title"]}}</ion-checkbox>
 
-    
+      <br>
+      <label class="login-label" style="margin: 0px auto"> Smjer</label>
 
 
 
-    <label class="item item-input item-select select-godina" style="width: 260px; margin: 0px auto">   
+
+
+      <label class="item item-input item-select select-godina" style="width: 260px; margin: 0px auto">   
       <select  ng-change="showSelectValue(smjer)"  style="position:absolute;width: 300px;left: -34px;  overflow: visible;max-width:none;text-align: left" ng-model="smjer" ng-options="color.title as color.id for color in smjerovi"  >
   
  </select>
   </label><br/>
-    <label class="profil-label"> Ime</label>
-     
-    <input id="ime" ng-model="ime" style="width: 260px; margin: 0 auto;" type="text" />
-    <br>
-    <label class="profil-label">Prezime</label>
-    <input id="prezime" ng-model="prezime" style="width: 260px; margin: 0 auto;" type="text" /> <br>
-    <label class="profil-label"> E-mail</label>
-    <input id="mail" ng-model="mail" style="width: 260px; margin: 0 auto;" type="text" /> <br>
-    <label class="profil-label">Broj telefona</label>
-    <input id="tel" ng-model="tel" style="width: 260px; margin: 0 auto;" type="text" /> <br>
-    <label class="profil-label"> Adresa</label>
-    <input id="adresa" ng-model="adresa" style="width: 260px; margin: 0 auto;" type="text" /> <br>
+      <label class="profil-label"> Ime</label>
+
+      <input id="ime" ng-model="ime" style="width: 260px; margin: 0 auto;" type="text" />
+      <br>
+      <label class="profil-label">Prezime</label>
+      <input id="prezime" ng-model="prezime" style="width: 260px; margin: 0 auto;" type="text" /> <br>
+      <label class="profil-label"> E-mail</label>
+      <input id="mail" ng-model="mail" style="width: 260px; margin: 0 auto;" type="text" /> <br>
+      <label class="profil-label">Broj telefona</label>
+      <input id="tel" ng-model="tel" style="width: 260px; margin: 0 auto;" type="text" /> <br>
+      <label class="profil-label"> Adresa</label>
+      <input id="adresa" ng-model="adresa" style="width: 260px; margin: 0 auto;" type="text" /> <br>
 
 
-    </div>
-    <br/>
-    <a class="profil-spremi" ng-click="saveData()">Spremi</a>
-    </div>
-    <br/><br/>
+      </div>
+      <br/>
+      <a class="profil-spremi" ng-click="saveData()">Spremi</a>
+      </div>
+      <br/><br/>
   </ion-content>
 </ion-view>
