@@ -3,10 +3,12 @@ angular.module('starter')
     $scope.title;
  $scope.description;
  $scope.image;
+ $scope.message;
  $scope.images=[];
- $scope.adresa;
- $scope.ime;
- $scope.tel
+ $scope.adresa=window.localStorage.getItem("adresa");
+ $scope.ime = window.localStorage.getItem("ime")+ " "+ window.localStorage.getItem("prezime");
+ $scope.tel= window.localStorage.getItem("tel");
+   $scope.email=window.localStorage.getItem("mail");
 
    var request =$http({            
             method: "POST",
@@ -31,9 +33,8 @@ console.log("slikice"+$scope.images.length);
         
 });
 
-  $scope.sendEmail = function () {
-        
-            $scope.email = document.getElementById("mail").value;
+  $scope.sendEmail = function () { 
+            $scope.email = document.getElementById("email").value;
             $scope.message = document.getElementById("message").value;
             $scope.ime= document.getElementById("ime").value;
             $scope.adresa=document.getElementById("adresa").value;            
@@ -42,6 +43,7 @@ console.log("slikice"+$scope.images.length);
                 alert("E-mail i poruka ne smiju biti prazni!");
                 return;
             } 
+ 
             var request = $http({
 
                 method: "POST",
@@ -52,9 +54,10 @@ console.log("slikice"+$scope.images.length);
             }); 
             request.success(function (data) {
                 console.log("PORUKA"+data);
-
+                document.getElementById('message').value='';
+                alert("Poruka je poslana!");
+              
             });
-
 
 
 

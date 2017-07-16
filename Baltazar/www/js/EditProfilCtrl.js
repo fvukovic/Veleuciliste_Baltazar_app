@@ -24,7 +24,7 @@ angular.module('starter')
             //           $scope.smjerovi[i]={name: data[i]["title"]};             } 
             console.log($scope.smjerovi);
             $scope.smjerovi = [
-                { id: 'Duh', title: '0' },
+              
             ]
 
             for (var i = 0; i < data.length; i++) {
@@ -48,15 +48,9 @@ angular.module('starter')
         });
         request.success(function (data) { 
             $scope.godine = [
-                { id: '0', title: 'Duh',checked:false },
+                
             ]
-    for (var v = 0; v < $scope.godineSel.length; v++) {  
-         if ($scope.godineSel[v]["id"]==0) { 
-              $scope.godine = [
-                { id: '0', title: 'Duh',checked:true },
-            ]
-         }
-    }
+ 
 
 
             for (var i = 0; i < data.length; i++) {
@@ -122,18 +116,13 @@ angular.module('starter')
     }
     console.log($scope.checkItems);
             window.localStorage.setItem("godina", JSON.stringify($scope.checkItems));
-            if ($scope.odabraniSmjer == "" || $scope.odabranaGodina == "" || document.getElementById("ime").value == "" || document.getElementById("prezime").value == "" || document.getElementById("adresa").value == "" || document.getElementById("tel").value == "" || document.getElementById("mail").value == "") {
-                alert("Nisu svi podaci upisani");
-                return 0;
-            }
+        
             if ($scope.odabraniSmjer != null) {
                 window.localStorage.setItem("smjer", $scope.odabraniSmjer);
             }
-            if ($scope.odabranaGodina != null) {
-                window.localStorage.setItem("godina", $scope.odabranaGodina);
-            }
+             
             window.localStorage.setItem("adresa", document.getElementById("adresa").value);
-            window.localStorage.setItem("tel", document.getElementById("tel").value);
+            window.localStorage.setItem("tel", document.getElementById("tel").value); 
             window.localStorage.setItem("ime", document.getElementById("ime").value);
             window.localStorage.setItem("prezime", document.getElementById("prezime").value);
             window.localStorage.setItem("mail", document.getElementById("mail").value);

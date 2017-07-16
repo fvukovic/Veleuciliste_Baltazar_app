@@ -15,9 +15,15 @@ angular.module('starter.controllers', [])
       if (state == "odjava") {
         window.localStorage.setItem("smjer", null);
         window.localStorage.setItem("godina", null);
-         window.localStorage.setItem("login","0");
+        window.localStorage.setItem("login", "0");
+        window.localStorage.setItem("adresa", "");
+        window.localStorage.setItem("ime", "");
+        window.localStorage.setItem("prezime", "");
+        window.localStorage.setItem("mail", "");
+        window.localStorage.setItem("tel", "");
+
         $state.go("app.home");
-       
+
       } else {
         $state.go(state);
       }

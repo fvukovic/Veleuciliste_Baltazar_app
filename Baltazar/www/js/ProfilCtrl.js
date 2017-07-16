@@ -42,7 +42,7 @@ angular.module('starter')
           $scope.godina ="Neregistrirani korisnik";
         }
      if (null == window.localStorage.getItem("ime") || "" == window.localStorage.getItem("ime")) {
-          $scope.ime ="IME";
+          $scope.ime =window.localStorage.getItem("ime");
         } else{
 
           $scope.ime=window.localStorage.getItem("ime");
@@ -57,7 +57,7 @@ angular.module('starter')
           $scope.adresa ="Adresa nije unesena";
         } else{
 
-          $scope.adresa=window.localStorage.getItem("adresa");
+          $scope.adresa=window.localStorage.getItem("adresa"); 
         }  
          if (null == window.localStorage.getItem("mail") || "" == window.localStorage.getItem("mail")) {
           $scope.mail ="E-mail nije unesen";
